@@ -1,0 +1,82 @@
+@font-face{font-family:"Lalezar";src:url(../fonts/lalezar-arabic-400-normal.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:"Rokkitt";src:url(../fonts/rokkitt-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Plex Arabic";src:url(../fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:"Plex Arabic";src:url(../fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2) format("woff2");font-weight:500;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:"Plex Arabic";src:url(../fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:"Plex Arabic";src:url(../fonts/ibm-plex-sans-arabic-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+2013-2014,U+2018-201D}
+@font-face{font-family:"Plex Arabic";src:url(../fonts/ibm-plex-sans-arabic-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap;unicode-range:U+0000-00FF,U+2013-2014,U+2018-201D}
+@font-face{font-family:"Plex Arabic";src:url(../fonts/ibm-plex-sans-arabic-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0000-00FF,U+2013-2014,U+2018-201D}
+
+:root{
+  --slate:#343C41;
+  --slate-deep:#293035;
+  --slate-lift:#404950;
+  --cream:#EBE6DA;
+  --ash:#BDBFB8;
+  --roast:#D9B57E;
+  --display:"Lalezar","Rokkitt","Plex Arabic",serif;
+  --body:"Plex Arabic",system-ui,sans-serif;
+  --gutter:20px;
+  color-scheme:dark;
+}
+html:lang(en){--display:"Rokkitt","Lalezar",serif}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:72px}
+body{margin:0;background:var(--slate);color:var(--cream);font:400 1.0625rem/1.5 var(--body);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--roast);outline-offset:2px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.wrap{max-width:560px;margin-inline:auto;padding-inline:var(--gutter)}
+
+.hero{position:relative;padding-block:28px 22px;text-align:center}
+.lang{position:absolute;inset-block-start:16px;inset-inline-end:var(--gutter);min-height:44px;padding-inline:14px;background:none;border:1px solid var(--ash);border-radius:22px;color:var(--cream);font:500 .9375rem var(--body);cursor:pointer}
+.lang:hover{border-color:var(--cream)}
+.stamp{display:block;width:min(62vw,250px);height:auto;margin:30px auto 16px;animation:press .45s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes press{from{opacity:0;transform:scale(1.18) rotate(-4deg)}to{opacity:1;transform:none}}
+.title{margin:0;font:400 1.5rem/1.2 var(--display);color:var(--ash)}
+html:lang(en) .title{font-weight:700}
+
+.find{position:relative;margin-block-start:20px}
+.find input{width:100%;min-height:50px;padding-inline:16px 72px;background:var(--slate-deep);border:1px solid var(--slate-lift);border-radius:8px;color:var(--cream);font:400 1rem var(--body);-webkit-appearance:none;appearance:none}
+.find input::placeholder{color:var(--ash);opacity:1}
+.find input::-webkit-search-cancel-button{display:none}
+.find input:focus{border-color:var(--roast);outline:none}
+.clear{position:absolute;inset-block:0;inset-inline-end:4px;min-width:44px;padding-inline:12px;background:none;border:0;color:var(--roast);font:500 .9375rem var(--body);cursor:pointer}
+
+.bar{position:sticky;top:0;z-index:5;background:var(--slate-deep);box-shadow:0 1px 0 var(--slate-lift)}
+.chips{display:flex;gap:6px;max-width:560px;margin-inline:auto;padding:8px var(--gutter);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:flex;align-items:center;min-height:40px;padding-inline:14px;border-radius:20px;color:var(--ash);font-weight:500;font-size:.9375rem;text-decoration:none;white-space:nowrap}
+.chip:hover{color:var(--cream)}
+.chip.is-on{background:var(--cream);color:var(--slate-deep)}
+
+.menu{padding-block:10px 20px}
+.sec{padding-block-start:34px}
+.sec-title{margin:0;padding-block-end:10px;font:400 2.125rem/1.1 var(--display);color:var(--cream);background:url(../img/brush.svg) center bottom/100% 12px no-repeat}
+html:lang(en) .sec-title{font-weight:700;font-size:2.25rem}
+
+.tbl{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.tbl thead th{padding:8px 0 2px}
+.size{width:58px;text-align:center;font:700 1.125rem/1 "Rokkitt",serif;color:var(--roast)}
+.tbl:not(.has-sizes) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.tbl:not(.has-sizes) .row:first-child>*{padding-block-start:14px}
+.row-name{padding-block:10px;padding-inline-end:8px;text-align:start;font-weight:500}
+.row-title{display:block}
+.row-note{display:block;margin-block-start:2px;color:var(--ash);font-size:.8125rem;font-weight:400;text-align:start}
+.price{width:58px;padding-block:10px;text-align:center;font-weight:400;white-space:nowrap;direction:ltr;vertical-align:top}
+html[dir=rtl] .tbl:not(.has-sizes) .price{text-align:left}
+html[dir=ltr] .tbl:not(.has-sizes) .price{text-align:right}
+.tbl tbody tr+tr>*{border-block-start:1px solid rgba(235,230,218,.09)}
+
+.empty{padding-block:48px;text-align:center;color:var(--ash)}
+.empty p{margin:0}
+.foot{padding-block:28px 40px;text-align:center;color:var(--ash);font-size:.875rem}
+.foot p{margin:0 0 6px}
+.foot a{color:var(--cream);text-underline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){
+  .stamp{animation:none}
+  html{scroll-behavior:auto}
+}
+@media print{.bar,.find,.lang{display:none}}
